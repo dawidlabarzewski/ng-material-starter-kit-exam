@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title>
+    <h1>New Year Collection</h1>
+  </mat-card-title>
+  <mat-card-content>
+    <mat-grid-list cols="5" rowHeight="1:2">
+      <mat-grid-tile *ngFor="let item of list$ | async">
+        <a [routerLink]="['/products/' + item.id]" style="display:flex;flex-direction:column">
+          <img [src]="item.image" alt="{{ item.title }}" style="width: 100%">
+          <p>{{ item.title }}</p>
+          <div style="display:flex;justify-content: space-between;">
+            <span>Price: {{ item.price }}</span>
+            <span>Rating: {{ item.rating.rate }}</span>
+          </div>
+        </a>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>

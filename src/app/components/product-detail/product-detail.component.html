@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-title>
+    <h1>Product Detail Page</h1>
+  </mat-card-title>
+  <mat-card-content>
+    <img [src]="(details$ | async)?.image" alt="{{ (details$ | async)?.title }}" style="width: 200px">
+    <p>{{ (details$ | async)?.title }}</p>
+    <div style="display:flex;justify-content: space-between;">
+      <span>Price: {{ (details$ | async)?.price }}</span>
+      <span>Rating: {{ (details$ | async)?.rating?.rate }}</span>
+    </div>
+    <p>{{ (details$ | async)?.description }}</p>
+  </mat-card-content>
+</mat-card>
